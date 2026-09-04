@@ -10,6 +10,8 @@
 
 A full-stack, production-ready web application that combines **AI/NLP analysis**, **modern SaaS UI/UX design**, **multi-user authentication**, and **explainable scoring algorithms** to help job seekers evaluate and optimize their resumes.
 
+> 🚀 **Live Demo**: [https://ai-resume-analyzer-k8vweuj9wen4wgmudabj2c.streamlit.app/](https://ai-resume-analyzer-k8vweuj9wen4wgmudabj2c.streamlit.app/)
+
 ---
 
 ## 1. Project Overview
