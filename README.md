@@ -23,6 +23,10 @@ Job seekers face two fundamental challenges during their job search:
 - **📄 Resume Health Mode**: Evaluates overall resume structure, ATS readability, vocabulary impact, skills range, and quantifiable metrics **without requiring a job description**.
 - **🎯 Job Match Mode**: Compares a resume against **any target job role or job description**, calculating skill overlap, keyword coverage, TF-IDF semantic similarity, and actionable recommendations.
 
+### Application Execution Architecture
+- **Streamlit SaaS Application (`frontend/app.py`)**: Executes application logic in-process by directly importing backend Python modules for parsing, NLP analysis, scoring, authentication, and SQLite persistence.
+- **FastAPI REST API Server (`backend/main.py`)**: Operates as a standalone REST API serving external API clients, microservices, and interactive OpenAPI documentation (`/docs`).
+
 ---
 
 ## 2. Key Features
@@ -52,7 +56,7 @@ Job seekers face two fundamental challenges during their job search:
 - **Password Hashing**: Secure salted password hashing using `bcrypt` (12 rounds).
 - **JWT Authorization**: Cryptographic JSON Web Tokens (`HS256`) for request validation.
 - **User-Scoped History**: SQLite database queries strictly isolated by authenticated `user_id`.
-- **IDOR / BOLA Prevention**: Protected endpoints derive user identity 100% from verified JWT tokens.
+- **IDOR / BOLA Prevention**: Protected API endpoints derive user identity 100% from verified JWT tokens.
 - **Zero-URL Token Exposure**: Tokens stored in browser storage (`localStorage`) to keep URL bar clean (`http://localhost:8502/`).
 
 ### 📊 SaaS Dashboard & User Experience
@@ -126,32 +130,34 @@ The core intelligence is driven by deterministic NLP algorithms and statistical 
 ## 6. System Architecture
 
 ```
-                  +----------------------------------+
-                  | Streamlit Frontend (frontend/app.py) |
-                  +----------------------------------+
-                                   |
-                             HTTP / REST API
-                                   v
-                  +----------------------------------+
-                  | FastAPI REST Backend (backend/main.py)|
-                  +----------------------------------+
-                                   |
-                  +----------------------------------+
-                  |  JWT Security & Business Logic   |
-                  +----------------------------------+
-                                   |
-          +------------------------+------------------------+
-          |                        |                        |
-          v                        v                        v
-+------------------+     +-------------------+    +--------------------+
-|  PyMuPDF Parser  |     |  spaCy + TF-IDF   |    | Resume Health &    |
-|  (backend/parser)|     |  (backend/nlp)    |    | Scoring Engines    |
-+------------------+     +-------------------+    +--------------------+
-                                   |
-                                   v
-                  +----------------------------------+
-                  | SQLite Database (data/*.db)      |
-                  +----------------------------------+
+                  +--------------------------------------+
+                  |   STREAMLIT SaaS APPLICATION UI      |
+                  |         (frontend/app.py)            |
+                  +--------------------------------------+
+                                     |
+                         Direct In-Process Module Imports
+                                     |
+            +------------------------+------------------------+
+            |                        |                        |
+            v                        v                        v
+  +------------------+     +-------------------+    +--------------------+
+  |  PyMuPDF Parser  |     |  spaCy + TF-IDF   |    |  Resume Health &   |
+  |  (backend/parser)|     |  (backend/nlp)    |    |  Scoring Engines   |
+  +------------------+     +-------------------+    +--------------------+
+                                     |
+                                     v
+                  +--------------------------------------+
+                  |   SQLite Database (data/*.db)        |
+                  +--------------------------------------+
+                                     ^
+                                     |
+                        REST HTTP Requests (JWT Auth)
+                                     |
+                  +--------------------------------------+
+                  |   FastAPI REST API SERVER            |
+                  |         (backend/main.py)            |
+                  |   (For External API Clients & Docs)  |
+                  +--------------------------------------+
 ```
 
 ---
@@ -250,10 +256,10 @@ hopeful-faraday/
 .venv\Scripts\activate
 ```
 
-### Step 2: Install Dependencies & Download spaCy Model
+### Step 2: Install Dependencies
 ```powershell
+# Installs all packages and spaCy en_core_web_sm model wheel automatically
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
 ```
 
 ### Step 3: Run Automated Test Suite
@@ -261,17 +267,17 @@ python -m spacy download en_core_web_sm
 python -m pytest tests/ -v
 ```
 
-### Step 4: Launch FastAPI REST API Server
-```powershell
-uvicorn backend.main:app --reload --port 8000
-```
-
-### Step 5: Launch Streamlit SaaS Frontend Application
+### Step 4: Launch Streamlit SaaS Frontend Application
 ```powershell
 streamlit run frontend/app.py --server.port 8501
 ```
 
-Access the application in your web browser at `http://localhost:8501`.
+### Step 5: Launch FastAPI REST API Server (Optional for REST Clients)
+```powershell
+uvicorn backend.main:app --reload --port 8000
+```
+
+Access the Streamlit application in your web browser at `http://localhost:8501`.
 
 ---
 
