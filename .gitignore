@@ -1,0 +1,35 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment secrets & config
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Databases & local data
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/analyzer_history.db
+
+# User uploaded files & temporary artifacts
+uploads/*
+!uploads/.gitkeep
+temp_*.html
+*.log
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

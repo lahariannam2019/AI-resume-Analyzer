@@ -1,0 +1,93 @@
+{
+  "categories": {
+    "Programming Languages": [
+      "Python", "JavaScript", "TypeScript", "C++", "C#", "Java", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "SQL", "R", "Scala", "Dart", "HTML", "CSS", "Bash", "Shell"
+    ],
+    "Web Development": [
+      "React", "Angular", "Vue.js", "Next.js", "Nuxt.js", "Node.js", "Express.js", "FastAPI", "Django", "Flask", "Spring Boot", "Laravel", "ASP.NET", "GraphQL", "REST API", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "WebSockets", "Microservices"
+    ],
+    "Databases": [
+      "PostgreSQL", "MySQL", "MongoDB", "SQLite", "Redis", "Cassandra", "DynamoDB", "Elasticsearch", "Neo4j", "Firebase", "Oracle", "SQL Server", "MariaDB", "Supabase"
+    ],
+    "Frameworks & Libraries": [
+      "Redux", "Zustand", "RxJS", "Pandas", "NumPy", "SciPy", "Matplotlib", "Seaborn", "PyTorch", "TensorFlow", "Keras", "scikit-learn", "spaCy", "NLTK", "OpenCV", "LangChain", "LlamaIndex", "Hugging Face", "JQuery"
+    ],
+    "Tools & Platforms": [
+      "Git", "GitHub", "GitLab", "Bitbucket", "Jira", "Postman", "Swagger", "Vite", "Webpack", "Babel", "npm", "yarn", "pnpm", "Linux", "VS Code", "Docker", "Kubernetes"
+    ],
+    "Cloud & DevOps": [
+      "Amazon Web Services", "Microsoft Azure", "Google Cloud Platform", "Docker", "Kubernetes", "Terraform", "Ansible", "Jenkins", "GitHub Actions", "CI/CD", "Nginx", "Linux Administration", "Serverless", "Cloudflare"
+    ],
+    "AI / Machine Learning": [
+      "Machine Learning", "Deep Learning", "Natural Language Processing", "Computer Vision", "Reinforcement Learning", "Generative AI", "Large Language Models", "Neural Networks", "Feature Engineering", "Model Deployment", "BERT", "Transformers", "RAG"
+    ],
+    "Data Science & Analytics": [
+      "Data Analysis", "Data Visualization", "Exploratory Data Analysis", "Statistical Modeling", "A/B Testing", "Tableau", "Power BI", "Spark", "Hadoop", "Data Pipelines", "ETL", "BigQuery", "Snowflake"
+    ],
+    "UI / UX & Design": [
+      "Figma", "Adobe XD", "Sketch", "User Research", "Wireframing", "Prototyping", "Usability Testing", "UI Design", "UX Design", "Information Architecture", "Design Systems", "User Journeys", "Interaction Design", "Responsive Design"
+    ],
+    "Soft Skills": [
+      "Communication", "Teamwork", "Problem Solving", "Critical Thinking", "Adaptability", "Time Management", "Leadership", "Project Management", "Agile", "Scrum", "Collaboration", "Emotional Intelligence", "Analytical Thinking"
+    ]
+  },
+  "aliases": {
+    "js": "JavaScript",
+    "ts": "TypeScript",
+    "py": "Python",
+    "cpp": "C++",
+    "cs": "C#",
+    "react.js": "React",
+    "reactjs": "React",
+    "vue": "Vue.js",
+    "vuejs": "Vue.js",
+    "vue.js": "Vue.js",
+    "node": "Node.js",
+    "nodejs": "Node.js",
+    "node.js": "Node.js",
+    "next": "Next.js",
+    "nextjs": "Next.js",
+    "next.js": "Next.js",
+    "express": "Express.js",
+    "expressjs": "Express.js",
+    "express.js": "Express.js",
+    "tailwind": "Tailwind CSS",
+    "postgres": "PostgreSQL",
+    "postgresql": "PostgreSQL",
+    "mongo": "MongoDB",
+    "mongodb": "MongoDB",
+    "elastic": "Elasticsearch",
+    "aws": "Amazon Web Services",
+    "amazon web services": "Amazon Web Services",
+    "azure": "Microsoft Azure",
+    "gcp": "Google Cloud Platform",
+    "google cloud": "Google Cloud Platform",
+    "k8s": "Kubernetes",
+    "ml": "Machine Learning",
+    "dl": "Deep Learning",
+    "nlp": "Natural Language Processing",
+    "cv": "Computer Vision",
+    "ai": "Artificial Intelligence",
+    "llm": "Large Language Models",
+    "llms": "Large Language Models",
+    "generative ai": "Generative AI",
+    "genai": "Generative AI",
+    "sklearn": "scikit-learn",
+    "scikit learn": "scikit-learn",
+    "tf": "TensorFlow",
+    "pytorch": "PyTorch",
+    "rest": "REST API",
+    "rest api": "REST API",
+    "restful": "REST API",
+    "restful api": "REST API",
+    "graphql": "GraphQL",
+    "ci/cd": "CI/CD",
+    "cicd": "CI/CD",
+    "ux": "UX Design",
+    "ui": "UI Design",
+    "ui/ux": "UI / UX & Design",
+    "figma": "Figma",
+    "powerbi": "Power BI",
+    "eda": "Exploratory Data Analysis"
+  }
+}
